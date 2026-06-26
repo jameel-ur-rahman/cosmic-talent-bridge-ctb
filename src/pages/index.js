@@ -1,11 +1,13 @@
 import Head from 'next/head'
-import { Manrope, Space_Grotesk } from 'next/font/google'
+import Image from 'next/image'
+import { Manrope, Sora } from 'next/font/google'
 import styles from './index.module.css'
+import siteContent from '../config/siteContent'
 
-const headingFont = Space_Grotesk({
+const headingFont = Sora({
   subsets: ['latin'],
   variable: '--font-heading',
-  weight: ['500', '700']
+  weight: ['500', '600', '700']
 })
 
 const bodyFont = Manrope({
@@ -14,107 +16,161 @@ const bodyFont = Manrope({
   weight: ['400', '500', '600', '700']
 })
 
-const services = [
-  {
-    title: 'Executive Search',
-    text: 'Leadership hiring for founders, growth teams, and global operations.'
-  },
-  {
-    title: 'Project-Based Talent',
-    text: 'Rapid deployment of vetted specialists for short and mid-term projects.'
-  },
-  {
-    title: 'Career Mobility',
-    text: 'Career guidance, CV optimization, and interview preparation for professionals.'
-  }
-]
-
-const processSteps = [
-  'Discover role outcomes and culture fit',
-  'Curate high-intent candidate shortlists',
-  'Coordinate interviews and assessments',
-  'Support onboarding for 90-day success'
-]
-
 export default function Home() {
+  const { company, hero, stats, navigation, services, specializations, insights, trainingPrograms, process } =
+    siteContent
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: company.name,
+    url: company.siteUrl,
+    logo: `${company.siteUrl}/logo.svg`,
+    email: company.email,
+    telephone: company.phone,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Lahore',
+      addressRegion: 'Punjab',
+      addressCountry: 'PK'
+    },
+    description: company.tagline,
+    sameAs: []
+  }
+
   return (
     <>
       <Head>
-        <title>Cosmic Talent Bridge | Global Hiring and Career Growth</title>
-        <meta
-          name="description"
-          content="Cosmic Talent Bridge connects companies with high-performing talent and helps professionals grow through training and placement support."
-        />
+        <title>{`${company.name} | Staffing, Recruiting, and Professional Training`}</title>
+        <meta name="description" content={company.tagline} />
+        <meta name="keywords" content="staffing, recruiting, talent acquisition, global hiring, workforce solutions" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content={`${company.name} | Staffing and Recruiting`} />
+        <meta property="og:description" content={company.tagline} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={company.siteUrl} />
+        <meta property="og:image" content={`${company.siteUrl}/logo.svg`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${company.name} | Staffing and Recruiting`} />
+        <meta name="twitter:description" content={company.tagline} />
+        <link rel="canonical" href={company.siteUrl} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </Head>
 
-      <main className={`${styles.page} ${headingFont.variable} ${bodyFont.variable}`}>
-        <section className={styles.hero}>
-          <p className={styles.kicker}>Global Recruitment and Talent Growth</p>
-          <h1>Build teams that move faster than the market.</h1>
-          <p className={styles.heroCopy}>
-            Cosmic Talent Bridge helps companies hire with confidence and helps professionals
-            unlock better opportunities through practical guidance and strategic placement.
-          </p>
-          <div className={styles.actions}>
-            <a className={styles.primaryBtn} href="#contact">
-              Book a Consultation
+      <main id="top" className={`${styles.page} ${headingFont.variable} ${bodyFont.variable}`}>
+        <header className={styles.header}>
+          <div className={styles.headerInner}>
+            <a href="#top" className={styles.brand}>
+              <Image src="/logo.svg" alt={`${company.name} logo`} width={54} height={54} priority />
+              <div>
+                <p>{company.name}</p>
+                <span>{company.industry}</span>
+              </div>
             </a>
-            <a className={styles.secondaryBtn} href="#services">
-              Explore Services
+            <nav aria-label="Main navigation" className={styles.nav}>
+              {navigation.map((item) => (
+                <a key={item.label} href={item.href}>
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </header>
+
+        <section className={styles.hero}>
+          <p className={styles.kicker}>{company.location}</p>
+          <h1>{hero.title}</h1>
+          <p className={styles.heroCopy}>{hero.subtitle}</p>
+          <div className={styles.actions}>
+            <a className={styles.primaryBtn} href={hero.primaryCta.href}>
+              {hero.primaryCta.label}
+            </a>
+            <a className={styles.secondaryBtn} href={hero.secondaryCta.href}>
+              {hero.secondaryCta.label}
             </a>
           </div>
+
           <div className={styles.stats}>
-            <div>
-              <strong>120+</strong>
-              <span>Roles Filled</span>
-            </div>
-            <div>
-              <strong>18</strong>
-              <span>Industry Verticals</span>
-            </div>
-            <div>
-              <strong>92%</strong>
-              <span>Client Retention</span>
-            </div>
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
         </section>
 
         <section id="services" className={styles.section}>
-          <h2>Services Built for Growth</h2>
+          <h2>Core Services</h2>
           <div className={styles.cards}>
-            {services.map((item) => (
-              <article key={item.title} className={styles.card}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+            {services.map((service) => (
+              <article key={service.title} className={styles.card}>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className={styles.sectionAlt}>
-          <h2>Our Hiring Process</h2>
+        <section id="specializations" className={styles.sectionAlt}>
+          <h2>Specialized Fields</h2>
+          <ul className={styles.pills}>
+            {specializations.map((field) => (
+              <li key={field}>{field}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="insights" className={styles.section}>
+          <h2>Market Insights and Hiring Resources</h2>
+          <div className={styles.cards}>
+            {insights.map((insight) => (
+              <article key={insight.title} className={styles.card}>
+                <h3>{insight.title}</h3>
+                <p>{insight.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="training" className={styles.sectionAlt}>
+          <h2>Professional Training Programs</h2>
+          <ul className={styles.trainingList}>
+            {trainingPrograms.map((program) => (
+              <li key={program}>{program}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Our Process</h2>
           <ol className={styles.steps}>
-            {processSteps.map((step) => (
+            {process.map((step) => (
               <li key={step}>{step}</li>
             ))}
           </ol>
         </section>
 
-        <section className={styles.section}>
-          <h2>Sectors We Support</h2>
-          <p className={styles.inlineText}>
-            Technology, logistics, financial services, customer operations, healthcare support,
-            education, retail, and remote-first digital teams.
+        <section id="contact" className={styles.cta}>
+          <h2>Ready to hire or get placed?</h2>
+          <p>
+            Tell us your hiring requirement or career goal. We will respond with the next practical
+            step.
           </p>
+          <div className={styles.actions}>
+            <a className={styles.primaryBtn} href={`mailto:${company.email}`}>
+              {company.email}
+            </a>
+            <a className={styles.secondaryBtn} href={`tel:${company.phone}`}>
+              {company.phone}
+            </a>
+          </div>
         </section>
 
-        <section id="contact" className={styles.cta}>
-          <h2>Ready to hire or grow your career?</h2>
-          <p>Send your requirement and our team will contact you within one business day.</p>
-          <a className={styles.primaryBtn} href="mailto:hello@cosmictalentbridge.com">
-            hello@cosmictalentbridge.com
-          </a>
-        </section>
+        <footer className={styles.footer}>
+          <p>{company.legalName}</p>
+          <span>{`${company.location} | ${company.size}`}</span>
+        </footer>
       </main>
     </>
   )

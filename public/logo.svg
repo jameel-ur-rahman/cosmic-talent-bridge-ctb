@@ -1,0 +1,10 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="240" rx="20" fill="#081A3A"/>
+  <path d="M48 152C68 119 90 102 120 102C150 102 172 119 192 152" stroke="#AFC6E9" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="120" cy="76" r="26" stroke="#AFC6E9" stroke-width="4"/>
+  <path d="M94 76H146M120 50V102M101 59C109 63 131 63 139 59M101 93C109 89 131 89 139 93" stroke="#AFC6E9" stroke-width="3" stroke-linecap="round"/>
+  <path d="M68 48L72 56L80 60L72 64L68 72L64 64L56 60L64 56L68 48Z" fill="#C8D9F4"/>
+  <path d="M178 56L181 62L187 65L181 68L178 74L175 68L169 65L175 62L178 56Z" fill="#C8D9F4"/>
+  <text x="120" y="198" text-anchor="middle" fill="#DCE7F9" font-family="Arial, sans-serif" font-size="26" font-weight="700">COSMIC</text>
+  <text x="120" y="218" text-anchor="middle" fill="#DCE7F9" font-family="Arial, sans-serif" font-size="12" font-weight="500" letter-spacing="1.4">TALENT BRIDGE</text>
+</svg>
