@@ -1,0 +1,10 @@
+<svg width="420" height="310" viewBox="0 0 420 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Generated why us metrics visual">
+  <rect width="420" height="310" rx="20" fill="#eef3fb" />
+  <rect x="35" y="55" width="350" height="70" rx="12" fill="#ffffff" stroke="#c9d5ea" />
+  <rect x="35" y="145" width="350" height="70" rx="12" fill="#ffffff" stroke="#c9d5ea" />
+  <rect x="35" y="235" width="350" height="40" rx="12" fill="#dbe6fa" />
+  <circle cx="72" cy="90" r="18" fill="#173a75" />
+  <circle cx="72" cy="180" r="18" fill="#0056d6" />
+  <text x="210" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0a1f47" font-weight="700">Quality hiring outcomes</text>
+  <text x="210" y="187" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0a1f47" font-weight="700">Faster shortlist cycles</text>
+</svg>

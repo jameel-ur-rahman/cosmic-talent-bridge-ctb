@@ -1,0 +1,14 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Company partnership dealing and handshake">
+  <rect width="640" height="420" rx="20" fill="#edf3ff"/>
+  <rect x="78" y="80" width="484" height="258" rx="16" fill="#ffffff" stroke="#c9d8f2"/>
+  <rect x="110" y="116" width="420" height="74" rx="10" fill="#f3f7ff" stroke="#d4e1f7"/>
+  <circle cx="180" cy="222" r="26" fill="#173a75"/>
+  <rect x="154" y="248" width="52" height="76" rx="9" fill="#1f5cbf"/>
+  <circle cx="460" cy="222" r="26" fill="#0a1f47"/>
+  <rect x="434" y="248" width="52" height="76" rx="9" fill="#0056d6"/>
+  <rect x="282" y="240" width="78" height="28" rx="14" fill="#3b82f6"/>
+  <rect x="266" y="256" width="108" height="20" rx="10" fill="#1f5cbf"/>
+  <rect x="210" y="130" width="120" height="12" rx="6" fill="#8fb2ec"/>
+  <rect x="340" y="130" width="120" height="12" rx="6" fill="#8fb2ec"/>
+  <rect x="210" y="152" width="250" height="10" rx="5" fill="#b4caf1"/>
+</svg>

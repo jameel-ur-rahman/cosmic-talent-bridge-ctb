@@ -1,0 +1,109 @@
+{
+  "heroSlides": [
+    {
+      "title": "Interview readiness",
+      "description": "Candidate arrives with CV and connects with hiring manager for final evaluation.",
+      "image": "/hero-1.jpg.jpg"
+    },
+    {
+      "title": "Talent search",
+      "description": "Employers map roles and search for skilled professionals with recruiter support.",
+      "image": "/hero-2.jpg.jpg"
+    },
+    {
+      "title": "Training pathways",
+      "description": "Candidates improve communication, workplace culture, and language for global teams.",
+      "image": "/hero-3.jpg.jpg"
+    },
+    {
+      "title": "Company dealings",
+      "description": "Business teams finalize workforce plans and partnership agreements.",
+      "image": "/hero-4.jpg.jpg"
+    }
+  ],
+  "services": [
+    {
+      "title": "Global Recruitment and Remote Hiring",
+      "description": "Source and place qualified professionals for remote and cross-border teams.",
+      "image": "/service-contract.jpg.jpg"
+    },
+    {
+      "title": "Talent Acquisition and Sourcing",
+      "description": "Role mapping, screening, and interview coordination for quality hiring.",
+      "image": "/service-permanent.jpg.jpg"
+    },
+    {
+      "title": "Job Placement and Workforce Solutions",
+      "description": "Support contract, permanent, and project-based placements.",
+      "image": "/service-onboarding.jpg.jpg"
+    },
+    {
+      "title": "HR Consulting",
+      "description": "Advisory support for hiring workflows, onboarding standards, and role planning.",
+      "image": "/service-consulting.jpg.jpg"
+    }
+  ],
+  "hiringTrends": [
+    {
+      "title": "2026 Salary Guide",
+      "description": "Explore compensation benchmarks across finance, technology, legal, and support roles.",
+      "image": "/specialization-finance.jpg.jpeg"
+    },
+    {
+      "title": "Demand for Skilled Talent",
+      "description": "Understand employer plans, urgent role clusters, and hiring timelines.",
+      "image": "/specialization-technology.jpg.jpeg"
+    },
+    {
+      "title": "AI in Recruitment",
+      "description": "Use AI responsibly to speed up screening while preserving human decision quality.",
+      "image": "/service-consulting.jpg.jpg"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Employer Hiring Playbook",
+      "description": "Practical steps to define roles, shortlist faster, and improve offer acceptance.",
+      "image": "/about-leadership.jpg.jpeg"
+    },
+    {
+      "title": "Candidate Readiness Checklist",
+      "description": "Preparation framework for communication, workplace culture, and interview outcomes.",
+      "image": "/hero-1.jpg.jpg"
+    },
+    {
+      "title": "Training Tracks",
+      "description": "Professional environment adaptation, language, communication, and culture alignment.",
+      "image": "/service-training.jpg.jpg"
+    }
+  ],
+  "specializationCards": [
+    {
+      "title": "Technology teams",
+      "description": "Professionals collaborating on delivery systems and product operations.",
+      "image": "/specialization-technology.jpg.jpeg"
+    },
+    {
+      "title": "Finance and legal meetings",
+      "description": "Cross-functional planning for compliance, reporting, and execution.",
+      "image": "/specialization-finance.jpg.jpeg"
+    },
+    {
+      "title": "Support and operations",
+      "description": "Customer support and administrative teams aligned for service quality.",
+      "image": "/specialization-operations.jpg.jpeg"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Regional Operations Lead",
+      "role": "Hiring Partner",
+      "quote": "Cosmic Talent Bridge gave us a shortlist that was practical, relevant, and fast to interview."
+    },
+    {
+      "name": "Candidate Success Story",
+      "role": "Placed Professional",
+      "quote": "The preparation support helped me adapt quickly and perform with confidence in my new role."
+    }
+  ]
+}

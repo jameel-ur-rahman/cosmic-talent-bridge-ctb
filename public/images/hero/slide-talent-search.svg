@@ -1,0 +1,18 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Recruiters searching for talent">
+  <rect width="640" height="420" rx="20" fill="#eef4ff"/>
+  <rect x="64" y="70" width="512" height="280" rx="14" fill="#ffffff" stroke="#c9d8f2"/>
+  <rect x="106" y="108" width="428" height="46" rx="23" fill="#e7efff"/>
+  <circle cx="140" cy="131" r="12" fill="#1f5cbf"/>
+  <rect x="160" y="124" width="220" height="14" rx="7" fill="#9dbbf2"/>
+  <rect x="106" y="176" width="144" height="136" rx="12" fill="#f2f7ff" stroke="#c7d9f9"/>
+  <rect x="272" y="176" width="144" height="136" rx="12" fill="#f2f7ff" stroke="#c7d9f9"/>
+  <rect x="438" y="176" width="96" height="136" rx="12" fill="#173a75"/>
+  <circle cx="178" cy="212" r="20" fill="#3b82f6"/>
+  <circle cx="344" cy="212" r="20" fill="#0a1f47"/>
+  <circle cx="486" cy="214" r="18" fill="#ffffff"/>
+  <rect x="152" y="242" width="52" height="8" rx="4" fill="#8fb1ea"/>
+  <rect x="318" y="242" width="52" height="8" rx="4" fill="#8fb1ea"/>
+  <rect x="460" y="242" width="52" height="8" rx="4" fill="#bad0f5"/>
+  <circle cx="540" cy="286" r="22" fill="#3b82f6"/>
+  <circle cx="540" cy="286" r="10" fill="#ffffff"/>
+</svg>

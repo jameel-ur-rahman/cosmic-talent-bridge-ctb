@@ -1,0 +1,15 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Candidate presenting CV for interview">
+  <rect width="640" height="420" rx="20" fill="#edf3ff"/>
+  <rect x="70" y="70" width="500" height="280" rx="16" fill="#ffffff" stroke="#c8d8f2"/>
+  <rect x="278" y="160" width="84" height="120" rx="8" fill="#0a1f47"/>
+  <circle cx="236" cy="165" r="28" fill="#173a75"/>
+  <rect x="206" y="198" width="62" height="96" rx="10" fill="#3b82f6"/>
+  <rect x="257" y="216" width="84" height="8" rx="4" fill="#9cc0ff"/>
+  <circle cx="404" cy="165" r="28" fill="#0a1f47"/>
+  <rect x="374" y="198" width="62" height="96" rx="10" fill="#1f5cbf"/>
+  <rect x="300" y="196" width="64" height="96" rx="8" fill="#ffffff" stroke="#92a9d9"/>
+  <line x1="312" y1="224" x2="352" y2="224" stroke="#4a6ca9" stroke-width="4"/>
+  <line x1="312" y1="242" x2="346" y2="242" stroke="#4a6ca9" stroke-width="4"/>
+  <line x1="312" y1="260" x2="348" y2="260" stroke="#4a6ca9" stroke-width="4"/>
+  <rect x="186" y="312" width="260" height="14" rx="7" fill="#d7e5ff"/>
+</svg>
