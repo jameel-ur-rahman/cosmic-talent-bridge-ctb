@@ -8,7 +8,30 @@ const siteContent = {
     size: '2-10 employees',
     siteUrl: 'https://www.cosmictalentbridge.com',
     email: 'hello@cosmictalentbridge.com',
-    phone: '+92-300-0000000'
+    phone: '+92-300-0000000',
+    testimonials: [
+      {
+        name: 'John Smith',
+        company: 'Tech Startup Inc',
+        role: 'Hiring Manager',
+        image: '/images/testimonial-1.jpg',
+        text: 'Cosmic Talent Bridge found us the perfect Senior Developer in just 2 weeks!'
+      },
+      {
+        name: 'Sarah Johnson',
+        company: 'Finance Corp',
+        role: 'HR Director',
+        image: '/images/testimonial-2.jpg',
+        text: 'Professional, fast, and reliable. Their training programs saved us months of onboarding.'
+      },
+      {
+        name: 'Ahmed Khan',
+        company: 'Global Services Ltd',
+        role: 'Founder',
+        image: '/images/testimonial-3.jpg',
+        text: 'Best recruitment experience. They truly understand international hiring requirements.'
+      }
+    ]
   },
   navigation: [
     { label: 'Services', href: '#services' },
@@ -18,41 +41,62 @@ const siteContent = {
     { label: 'Contact', href: '#contact' }
   ],
   hero: {
-    title: 'A cleaner way to hire, train, and place global talent.',
-    subtitle:
-      'We support employers with reliable staffing and help professionals become job-ready for international teams through practical training programs.',
-    primaryCta: { label: 'Hire Talent', href: '#contact' },
-    secondaryCta: { label: 'Find Opportunities', href: '#specializations' }
+    title: 'Anything is possible when the right talent meets the right opportunity.',
+    subtitle: 'Cosmic Talent Bridge connects employers with skilled professionals and prepares candidates for global teams through practical training and placement support.',
+    primaryCta: { label: 'Find a job', href: '#contact' },
+    secondaryCta: { label: 'Find talent', href: '#specializations' },
+    backgroundImages: [
+      '/images/hero-1.jpg',
+      '/images/hero-2.jpg',
+      '/images/hero-3.jpg',
+      '/images/hero-4.jpg'
+    ]
   },
   stats: [
-    { value: 'Global', label: 'Recruitment reach' },
-    { value: '2-10', label: 'Core specialist team' },
-    { value: 'Fast', label: 'Shortlist turnaround' }
+    { value: '5000+', label: 'Placements Made' },
+    { value: '500+', label: 'Companies Served' },
+    { value: '50+', label: 'Countries Reached' }
   ],
   services: [
     {
-      title: 'Global Recruitment and Remote Hiring',
-      description: 'Source and place qualified professionals for remote and cross-border teams.'
+      title: 'Permanent Placement',
+      description: 'Full-time hires with comprehensive screening and cultural fit assessment.',
+      image: '/images/service-permanent.jpg'
     },
     {
-      title: 'Talent Acquisition and Sourcing',
-      description: 'Role mapping, candidate screening, and interview coordination for quality hiring.'
+      title: 'Contract & Temporary Staffing',
+      description: 'Flexible workforce solutions for project-based and seasonal needs.',
+      image: '/images/service-contract.jpg'
     },
     {
-      title: 'Job Placement and Workforce Solutions',
-      description: 'Support contract, permanent, and project-based placements across business functions.'
+      title: 'Executive Placement',
+      description: 'Senior leadership recruitment for C-suite and director-level roles.',
+      image: '/images/service-executive.jpg'
     },
     {
-      title: 'HR Consulting',
-      description: 'Advisory support for hiring workflows, onboarding standards, and role planning.'
+      title: 'Professional Training Programs',
+      description: 'Upskill your workforce with our specialized professional development.',
+      image: '/images/service-training.jpg'
+    },
+    {
+      title: 'Consulting & Advisory',
+      description: 'Strategic guidance on hiring, organizational structure, and talent management.',
+      image: '/images/service-consulting.jpg'
+    },
+    {
+      title: 'Onboarding & Integration',
+      description: '30-day support ensuring new hires succeed in their roles.',
+      image: '/images/service-onboarding.jpg'
     }
   ],
   specializations: [
-    'Finance and Accounting',
-    'Technology',
-    'Marketing and Creative',
-    'Legal',
-    'Administrative and Customer Support'
+    { name: 'Finance & Accounting', image: '/images/specialization-finance.jpg' },
+    { name: 'Technology', image: '/images/specialization-technology.jpg' },
+    { name: 'Marketing and Creative', image: '/images/specialization-marketing.jpg' },
+    { name: 'Legal', image: '/images/specialization-legal.jpg' },
+    { name: 'Administrative and Customer Support', image: '/images/specialization-admin.jpg' },
+    { name: 'Customer Service', image: '/images/specialization-customer-service.jpg' },
+    { name: 'Operations & Supply Chain', image: '/images/specialization-operations.jpg' }
   ],
   insights: [
     {
