@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
-export default function ServicesGrid({ services }) {
+export default function ServicesGrid({ services, title, description }) {
   return (
     <section id="services" className="section blockLight">
       <div className="sectionHeader">
-        <h2>Help you hire, your way</h2>
-        <p>Start online or with a recruiter and get a practical shortlist built for your role outcomes.</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
       </div>
 
       <div className="grid servicesGrid">

@@ -1,0 +1,25 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Show Latest Copilot Commit",
+			"type": "shell",
+			"command": "git log -1 --pretty=format:\"%H%n%s%n%an%n%ad\"; echo \"---\"; git show --name-status --pretty=format:\"\" --no-renames"
+		},
+		{
+			"label": "Export Latest Commit Files",
+			"type": "shell",
+			"command": "git show --name-status --pretty=format:\"\" --no-renames > latest-copilot-changes.txt; git show --stat --oneline -1 > latest-copilot-stat.txt; git status --short --branch"
+		},
+		{
+			"label": "Convert Commit Reports UTF8",
+			"type": "shell",
+			"command": "Get-Content latest-copilot-changes.txt -Encoding Unicode | Set-Content latest-copilot-changes-utf8.txt -Encoding utf8; Get-Content latest-copilot-stat.txt -Encoding Unicode | Set-Content latest-copilot-stat-utf8.txt -Encoding utf8"
+		},
+		{
+			"label": "Build Project",
+			"type": "shell",
+			"command": "cmd /c npm run build"
+		}
+	]
+}

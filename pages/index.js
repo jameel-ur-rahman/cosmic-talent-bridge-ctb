@@ -38,11 +38,8 @@ function AboutBlock() {
       </div>
 
       <div>
-        <h2>Why Cosmic Talent Bridge</h2>
-        <p>
-          We blend recruiter expertise, practical role understanding, and AI-assisted workflows to
-          connect talent and employers faster while maintaining quality and fit.
-        </p>
+        <h2>{mockData.pageCopy.about.title}</h2>
+        <p>{mockData.pageCopy.about.description}</p>
         <div className="statsGrid">
           {STATS.map((stat) => (
             <article key={stat.label} className="statCard">
@@ -60,7 +57,7 @@ function SpecializationBlock({ cards }) {
   return (
     <section id="consulting" className="section blockLight">
       <div className="sectionHeader">
-        <h2>Add specialized talent across your organization</h2>
+        <h2>{mockData.pageCopy.specialization.title}</h2>
       </div>
 
       <div className="specializationTabs" role="tablist" aria-label="Specializations">
@@ -74,15 +71,12 @@ function SpecializationBlock({ cards }) {
       <div className="specializationPanel">
         <Image src="/specialization-marketing.jpg.jpeg" alt="Specialization hiring overview" width={720} height={520} className="aboutPhoto" />
         <div>
-          <h3>Built for high-demand roles</h3>
-          <p>
-            From entry specialists to leadership hires, our recruitment and consulting support scales
-            with your workforce goals.
-          </p>
+          <h3>{mockData.pageCopy.specialization.panelTitle}</h3>
+          <p>{mockData.pageCopy.specialization.panelDescription}</p>
           <ul>
-            <li>Shortlist creation aligned with role outcomes</li>
-            <li>Flexible hiring support for contract and permanent placements</li>
-            <li>Candidate readiness pathways for faster onboarding</li>
+            {mockData.pageCopy.specialization.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
           </ul>
         </div>
       </div>
@@ -91,6 +85,112 @@ function SpecializationBlock({ cards }) {
         {cards.map((card) => (
           <article key={card.title} className="card featureCard">
             <Image src={card.image} alt={card.title} width={560} height={340} className="featureMedia" />
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function HiringProjectionSection() {
+  useEffect(() => {
+    const cards = document.querySelectorAll('.projectionCard')
+    if (!cards.length) return undefined
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('isVisible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    cards.forEach((card) => observer.observe(card))
+    return () => observer.disconnect()
+  }, [])
+
+  const stats = [
+    {
+      value: '20+',
+      title: 'Global Recruiters',
+      description: 'Experienced recruitment professionals serving worldwide.'
+    },
+    {
+      value: '100+',
+      title: 'Happy Clients',
+      description: 'Trusted by organizations and professionals across industries.'
+    },
+    {
+      value: '5+',
+      title: 'Strategic Partners',
+      description: 'Building long-term partnerships with technology and SaaS companies.'
+    },
+    {
+      value: '24/7',
+      title: 'Global Support',
+      description: 'Continuous assistance across multiple time zones.'
+    }
+  ]
+
+  const cards = [
+    {
+      title: 'Team Growth',
+      image: '/service-permanent.jpg.jpg',
+      description:
+        'Build stronger organizations with highly skilled permanent, contract and project-based professionals. Our recruitment specialists help businesses scale quickly while maintaining quality, collaboration and long-term success.'
+    },
+    {
+      title: 'Talent Pipeline',
+      image: '/service-onboarding.jpg.jpg',
+      description:
+        'Our structured recruitment process identifies, screens and connects qualified professionals efficiently, reducing hiring time while improving candidate quality and organizational fit.'
+    },
+    {
+      title: 'Market Demand',
+      image: '/specialization-technology.jpg.jpeg',
+      description:
+        'Stay informed with hiring trends, workforce demand and industry insights that help businesses plan recruitment strategies and professionals prepare for emerging opportunities.'
+    },
+    {
+      title: 'Compensation Trends',
+      image: '/specialization-finance.jpg.jpeg',
+      description:
+        'Compare salary benchmarks, understand market movements and develop competitive compensation strategies that attract and retain top talent across global markets.'
+    }
+  ]
+
+  return (
+    <section id="hiring-projection" className="hiringProjection section">
+      <div className="hiringProjectionHeader">
+        <h2>Hiring &amp; Projection</h2>
+        <p>
+          Market insights, hiring trends and workforce projections helping businesses and professionals
+          make better hiring decisions.
+        </p>
+      </div>
+
+      <div className="projectionStatsGrid">
+        {stats.map((stat) => (
+          <article key={stat.title} className="projectionStat">
+            <h3>{stat.value}</h3>
+            <h4>{stat.title}</h4>
+            <p>{stat.description}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="projectionCardsGrid">
+        {cards.map((card) => (
+          <article key={card.title} className="projectionCard">
+            <div className="projectionImageWrap">
+              <Image src={card.image} alt={card.title} width={560} height={340} className="projectionImage" />
+            </div>
             <h3>{card.title}</h3>
             <p>{card.description}</p>
           </article>
@@ -140,6 +240,15 @@ export default function HomePage() {
       <Head>
         <title>{`${SITE.brand} | Staffing, Recruitment and Job Search`}</title>
         <meta name="description" content={SITE.heroSubtitle} />
+        <meta property="og:title" content={`${SITE.brand} | Staffing, Recruitment and Job Search`} />
+        <meta property="og:description" content={SITE.heroSubtitle} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE.siteUrl} />
+        <meta property="og:site_name" content={SITE.brand} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${SITE.brand} | Staffing, Recruitment and Job Search`} />
+        <meta name="twitter:description" content={SITE.heroSubtitle} />
+        <link rel="canonical" href={SITE.siteUrl} />
       </Head>
 
       <Header
@@ -162,21 +271,19 @@ export default function HomePage() {
 
       <main id="mainContent">
         <Hero site={SITE} slides={mockData.heroSlides} />
-        <FeatureCards id="hiring-trends" title="Hiring trends and insights" items={mockData.hiringTrends} />
+        <HiringProjectionSection />
+        <FeatureCards id="hiring-trends" title={mockData.pageCopy.hiringTrends.title} items={mockData.hiringTrends} />
         <AboutBlock />
-        <ServicesGrid services={mockData.services} />
+        <ServicesGrid services={mockData.services} title={mockData.pageCopy.services.title} description={mockData.pageCopy.services.description} />
         <SpecializationBlock cards={mockData.specializationCards} />
         <section id="jobs" className="section">
           <div className="sectionHeader">
-            <h2>Find jobs aligned to your strengths</h2>
-            <p>
-              Search role paths in finance, technology, legal, and support tracks with coaching that
-              helps you stand out.
-            </p>
+            <h2>{mockData.pageCopy.jobs.title}</h2>
+            <p>{mockData.pageCopy.jobs.description}</p>
           </div>
         </section>
-        <FeatureCards id="resources" title="Resources and training" items={mockData.resources} />
-        <Testimonials testimonials={mockData.testimonials} date={SITE.date} />
+        <FeatureCards id="resources" title={mockData.pageCopy.resources.title} items={mockData.resources} />
+        <Testimonials testimonials={{ title: mockData.pageCopy.testimonials.title, items: mockData.testimonials }} date={SITE.date} />
       </main>
 
       <Footer site={SITE} />

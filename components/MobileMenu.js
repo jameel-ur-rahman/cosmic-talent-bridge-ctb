@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function Group({ title, items, activeSection, onClose }) {
   const [open, setOpen] = useState(true)
@@ -27,15 +27,52 @@ function Group({ title, items, activeSection, onClose }) {
 }
 
 export default function MobileMenu({ isOpen, onClose, navItems, topLinks, activeSection }) {
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        onClose()
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen, onClose])
+
   if (!isOpen) return null
 
   return (
-    <aside className="mobileMenu" aria-label="Mobile navigation menu">
+    <aside className="mobileMenu" aria-label="Mobile navigation menu" role="dialog" aria-modal="true">
       <div className="mobileMenuHeader">
-        <strong>Menu</strong>
+        <div className="mobileMenuBrand" aria-label="Cosmic Talent Bridge">
+          <span className="mobileMenuBrandMark" aria-hidden="true">
+            CTB
+          </span>
+          <span className="mobileMenuBrandDivider" aria-hidden="true" />
+          <strong>Cosmic Talent Bridge</strong>
+        </div>
         <button className="menuClose" onClick={onClose} aria-label="Close mobile menu" type="button">
-          Close
+          ×
         </button>
+      </div>
+
+      <div className="mobileGroup mobileProjectionLink">
+        <a
+          href="#hiring-projection"
+          onClick={onClose}
+          className={activeSection === 'hiring-projection' ? 'isActive' : ''}
+          aria-current={activeSection === 'hiring-projection' ? 'page' : undefined}
+        >
+          Hiring &amp; Projection
+        </a>
       </div>
 
       <Group title="Talent Services" items={navItems.slice(0, 3)} activeSection={activeSection} onClose={onClose} />

@@ -22,6 +22,13 @@ body {
   scroll-behavior: smooth;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #1f5eff;
+  outline-offset: 2px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -37,7 +44,7 @@ img {
 }
 
 main {
-  padding-top: 108px;
+  padding-top: 0;
 }
 
 .siteHeader {
@@ -47,102 +54,152 @@ main {
   right: 0;
   z-index: 70;
   background: transparent;
-  transition: background 0.24s ease, box-shadow 0.24s ease;
+  border-bottom: 0;
+  box-shadow: none;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .siteHeader.isScrolled {
-  background: #fff;
-  box-shadow: 0 10px 26px rgba(10, 31, 71, 0.12);
-}
-
-.siteHeader.scrollDown .mainBar {
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.siteHeader.scrollUp .mainBar {
-  border-bottom: 1px solid rgba(15, 23, 42, 0.14);
-}
-
-.topBar {
-  background: var(--brand);
-  color: #fff;
-  font-size: 0.84rem;
-}
-
-.topBarInner {
-  min-height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.topBar nav {
-  display: flex;
-  gap: 1rem;
-}
-
-.topBar a {
-  color: #e5edff;
-  text-decoration: none;
+  background: #ffffff;
+  border-bottom: 1px solid #e9e9e9;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .mainBar {
-  min-height: 72px;
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  min-height: 88px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 64px;
+  padding-right: 64px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  background: rgba(255, 255, 255, 0.96);
+  gap: 1.1rem;
+  background: transparent;
 }
 
 .brand {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--brand);
+  color: #ffffff;
   text-decoration: none;
 }
 
-.desktopNav {
-  display: flex;
-  gap: 0.9rem;
-}
-
-.desktopNav a {
+.brandWithLogo {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  color: var(--ink-soft);
-  text-decoration: none;
+  gap: 16px;
+}
+
+.brandLogo {
+  width: 146px;
+  height: 20px;
+}
+
+.brandText {
+  color: #ffffff;
+  font-size: 20px;
   font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.2px;
 }
 
-.desktopNav a.isActive {
-  color: var(--brand);
+.siteHeader.isScrolled .brandText {
+  color: #111111;
 }
 
-.searchBar input {
-  width: 100%;
-  min-width: 250px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid #c9d5ea;
-  padding: 0 0.95rem;
+.headerActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.searchIconButton,
+.headerMenuButton {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.headerIcon {
+  font-size: 28px;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.siteHeader.isScrolled .headerIcon {
+  color: #111111;
+}
+
+.heroSlide > div[aria-hidden='true'] {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.heroOverlay.heroOverlayCustom {
+  left: 64px !important;
+  right: auto !important;
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  text-align: left !important;
+  width: min(760px, 58vw) !important;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.45) 35%, rgba(0, 0, 0, 0) 75%) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 1.6rem 2rem 1.6rem 1.2rem !important;
+}
+
+.heroOverlayCustom .heroTitleLine {
+  font-size: clamp(46px, 5vw, 64px) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+.heroOverlayCustom .heroDescriptions p {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  color: #ffffff !important;
+}
+
+.heroOverlayCustom .heroCtaButton {
+  border-radius: 8px !important;
+  border: 1px solid #ffffff !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  padding: 0.72rem 1.15rem !important;
+}
+
+.heroOverlayCustom .heroCtaButton:first-child {
+  background: #1f5eff !important;
+  border-color: #1f5eff !important;
+  color: #ffffff !important;
+}
+
+.heroOverlayCustom .heroCtaButton:hover {
+  background: #1f5eff !important;
+  border-color: #1f5eff !important;
+  color: #ffffff !important;
+}
+
+.headerHiddenNav {
+  display: none;
 }
 
 .menuButton {
-  display: none;
+  display: inline-flex;
   border: 0;
   background: transparent;
   cursor: pointer;
 }
 
 .menuButton span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  margin: 4px 0;
-  background: var(--brand);
+  display: inline-block;
 }
 
 .section {
@@ -204,7 +261,7 @@ main {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(10, 31, 71, 0.62) 0%, rgba(10, 31, 71, 0.18) 58%, rgba(10, 31, 71, 0.1) 100%);
+  background: none;
   pointer-events: none;
 }
 
@@ -236,10 +293,10 @@ main {
   top: 50%;
   transform: translateY(-50%);
   max-width: min(92%, 620px);
-  background: rgba(10, 31, 71, 0.66);
-  border: 1px solid rgba(227, 236, 255, 0.18);
-  border-radius: 12px;
-  backdrop-filter: blur(2px);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  backdrop-filter: none;
   color: #fff;
   padding: 1rem 1.1rem;
   z-index: 6;
@@ -453,11 +510,16 @@ main {
 
 .mobileMenu {
   position: fixed;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(45vw, 620px);
   z-index: 100;
   background: #fff;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 1.2rem;
+  box-shadow: -20px 0 45px rgba(15, 23, 42, 0.14);
+  animation: menuSlideIn 300ms ease;
 }
 
 .mobileMenuHeader {
@@ -467,12 +529,66 @@ main {
   margin-bottom: 1rem;
 }
 
+.mobileMenuBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.mobileMenuBrandMark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: #0a1f47;
+}
+
+.mobileMenuBrandDivider {
+  width: 1px;
+  height: 20px;
+  background: #c6d0e5;
+}
+
+.mobileMenuBrand strong {
+  font-size: 1rem;
+  color: #111;
+}
+
 .menuClose,
 .menuAccordion {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #f8fbff;
   padding: 0.6rem 0.75rem;
+}
+
+.menuClose {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.mobileProjectionLink {
+  margin-bottom: 1rem;
+}
+
+.mobileProjectionLink a {
+  display: block;
+  font-weight: 700;
+  color: #0a1f47;
+  text-decoration: none;
+  border: 1px solid #d8e2f4;
+  border-radius: 10px;
+  padding: 0.68rem 0.8rem;
+  background: #f8fbff;
 }
 
 .mobileGroup {
@@ -493,6 +609,139 @@ main {
 .mobileMenu a.isActive {
   color: var(--brand);
   font-weight: 700;
+}
+
+.hiringProjection {
+  background: #f8fafc;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.hiringProjectionHeader {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+}
+
+.hiringProjectionHeader h2 {
+  margin: 0;
+  color: #111111;
+  font-size: 46px;
+  font-weight: 700;
+}
+
+.hiringProjectionHeader p {
+  margin: 0.9rem auto 0;
+  color: #666666;
+  font-size: 18px;
+  max-width: 760px;
+}
+
+.projectionStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 70px;
+}
+
+.projectionStat {
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.projectionStat h3 {
+  margin: 0;
+  color: #1f5eff;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.projectionStat h4 {
+  margin: 0.45rem 0 0.4rem;
+  color: #111111;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.projectionStat p {
+  margin: 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.projectionCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.projectionCard {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: transform 300ms ease, box-shadow 300ms ease, opacity 300ms ease;
+}
+
+.projectionCard.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projectionImageWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.projectionImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.projectionCard h3 {
+  margin: 0 0 0.8rem;
+  color: #1f5eff;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.projectionCard p {
+  margin: 0;
+  color: #444444;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.projectionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 38px rgba(15, 23, 42, 0.16);
+}
+
+.projectionCard:hover .projectionImage {
+  transform: scale(1.03);
+}
+
+@keyframes menuSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .siteFooter {
@@ -524,16 +773,9 @@ main {
 
 @media (max-width: 1020px) {
   .mainBar {
-    grid-template-columns: auto 1fr auto;
-  }
-
-  .desktopNav,
-  .headerSearch {
-    display: none;
-  }
-
-  .menuButton {
-    display: block;
+    min-height: 88px;
+    padding-left: 64px;
+    padding-right: 64px;
   }
 
   .hero,
@@ -543,8 +785,17 @@ main {
   .grid.three,
   .servicesGrid,
   .footerGrid,
-  .statsGrid {
+  .statsGrid,
+  .projectionCardsGrid {
     grid-template-columns: 1fr;
+  }
+
+  .projectionStatsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projectionCardsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .heroCarousel {
@@ -566,6 +817,36 @@ main {
   }
 
   main {
-    padding-top: 96px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .mainBar {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .mobileMenu {
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+  }
+
+  .hiringProjectionHeader h2 {
+    font-size: 34px;
+  }
+
+  .hiringProjectionHeader p {
+    font-size: 16px;
+  }
+
+  .projectionStatsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projectionCardsGrid {
+    grid-template-columns: 1fr;
   }
 }

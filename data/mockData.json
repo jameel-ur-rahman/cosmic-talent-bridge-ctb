@@ -1,4 +1,37 @@
 {
+  "pageCopy": {
+    "hiringTrends": {
+      "title": "Hiring trends and insights"
+    },
+    "about": {
+      "title": "Why Cosmic Talent Bridge",
+      "description": "We blend recruiter expertise, practical role understanding, and AI-assisted workflows to connect talent and employers faster while maintaining quality and fit."
+    },
+    "services": {
+      "title": "Help you hire, your way",
+      "description": "Start online or with a recruiter and get a practical shortlist built for your role outcomes."
+    },
+    "specialization": {
+      "title": "Add specialized talent across your organization",
+      "panelTitle": "Built for high-demand roles",
+      "panelDescription": "From entry specialists to leadership hires, our recruitment and consulting support scales with your workforce goals.",
+      "bullets": [
+        "Shortlist creation aligned with role outcomes",
+        "Flexible hiring support for contract and permanent placements",
+        "Candidate readiness pathways for faster onboarding"
+      ]
+    },
+    "jobs": {
+      "title": "Find jobs aligned to your strengths",
+      "description": "Search role paths in finance, technology, legal, and support tracks with coaching that helps you stand out."
+    },
+    "resources": {
+      "title": "Resources and training"
+    },
+    "testimonials": {
+      "title": "What clients and candidates say"
+    }
+  },
   "heroSlides": [
     {
       "title": "Interview readiness",
